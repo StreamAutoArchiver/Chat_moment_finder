@@ -6,7 +6,8 @@ Basic usage:
 python Chat_moment_finder.py <vod_id> -e <emote_name>
 ```
 
-##additional args
+additional args
+
 ```
 -r <resolution> , size of splits for searching. defualt is 60 seconds
 -t <threshold> , how many emote occurances needed to conside a point of intrest
