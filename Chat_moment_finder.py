@@ -27,7 +27,6 @@ class TwitchChatDownloader:
             pass
         return self.comments
     
-    
     def download_next_chat_segment(self):
         try:
             json_gql = self.download_chat_segment_gql()
@@ -58,10 +57,10 @@ class TwitchChatDownloader:
                     print(f"Failed to get json. R-code:{r.status_code}")
                     time.sleep(3)
                     if attempts > 4:
-                        self.msgError(f"Failed to get next part of Chat Json {r.status_code}")
+                        print(f"ERROR: Failed to get next part of Chat Json {r.status_code}")
                         return {}
             except Exception as e:
-                self.msgError(f"Error with Request: {e}")
+                print(f"ERROR: Error with Request: {e}")
                 attempts = 0
 
 def parse_chat(chatjson, resolution, emote_name, threshold):
